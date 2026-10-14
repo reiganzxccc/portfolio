@@ -444,7 +444,12 @@ document.addEventListener('DOMContentLoaded', () => {
     { id: 'contact', link: document.getElementById('nav-contact') }
   ];
 
+  let currentActiveId = 'hero';
+  let isManualClick = false;
+  let clickTimer = null;
+
   function setActiveNavLink(targetId) {
+    currentActiveId = targetId;
     navTargets.forEach(item => {
       if (item.link) {
         if (item.id === targetId) {
@@ -459,7 +464,14 @@ document.addEventListener('DOMContentLoaded', () => {
   navTargets.forEach(item => {
     if (item.link) {
       item.link.addEventListener('click', () => {
+        isManualClick = true;
+        clearTimeout(clickTimer);
         setActiveNavLink(item.id);
+
+        clickTimer = setTimeout(() => {
+          isManualClick = false;
+        }, 900);
+
         if (window.innerWidth <= 900 && mainSidebar) {
           mainSidebar.classList.remove('mobile-open');
           if (mobileToggle) mobileToggle.innerHTML = '<i class="bi bi-list"></i>';
@@ -469,14 +481,26 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function highlightCurrentNav() {
+    if (isManualClick) return;
+
     let scrollY = window.pageYOffset + 180;
+    const isDesktop = window.innerWidth > 1100;
 
     for (let i = navTargets.length - 1; i >= 0; i--) {
-      const el = document.getElementById(navTargets[i].id);
+      const target = navTargets[i];
+      const el = document.getElementById(target.id);
       if (el) {
         const top = el.getBoundingClientRect().top + window.pageYOffset;
         if (scrollY >= top) {
-          setActiveNavLink(navTargets[i].id);
+          if (isDesktop && (target.id === 'about' || target.id === 'projects')) {
+            if (currentActiveId === 'about') {
+              setActiveNavLink('about');
+            } else {
+              setActiveNavLink('projects');
+            }
+          } else {
+            setActiveNavLink(target.id);
+          }
           break;
         }
       }
