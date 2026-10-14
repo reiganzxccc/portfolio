@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeron Opjer | Web Developer & Digital Solutions Portfolio</title>
+  <meta name="description"
+    content="Portfolio of Jeron Opjer, Web Developer. Explore projects, technical skills, verified industry credentials, and modern digital solutions.">
+  <meta name="author" content="Jeron A. Opjer">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Font Awesome 6.5 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body data-theme="default">
+
+  <!-- Interactive Background Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- ========================================================================
+       TOP NAVIGATION BAR / THEME SELECTOR
+       ======================================================================== -->
+  <header class="academic-topbar" id="academic-header">
+    <div class="uni-info">
+      <span class="uni-badge"><i class="bi bi-code-slash me-1"></i> Portfolio</span>
+      <span><strong>Jeron Opjer</strong> | Web Developer & Digital Solutions</span>
+    </div>
+    <div class="wireframe-tag">
+      <div class="theme-selector" id="theme-selector" aria-label="Colorway options">
+        <button class="theme-btn active" data-colorway="default" title="Balanced Slate Twilight"><i
+            class="bi bi-moon-stars-fill"></i> Slate</button>
+        <button class="theme-btn" data-colorway="warm-charcoal" title="Warm Nordic Charcoal"><i
+            class="bi bi-circle-half"></i> Charcoal</button>
+        <button class="theme-btn" data-colorway="soft-light" title="Comfortable Soft Light"><i
+            class="bi bi-sun-fill"></i> Soft Light</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Header Bar -->
+  <div class="mobile-header-bar" id="mobile-bar">
+    <div class="mobile-profile-brief">
+      <img src="assets/profile_photo.jpg" alt="Jeron Opjer" class="mobile-avatar">
+      <div>
+        <strong style="display:block; font-size:0.95rem;">Jeron Opjer</strong>
+        <span style="font-size:0.75rem; color: var(--text-secondary);">Web Developer</span>
+      </div>
+    </div>
+    <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">
+      <i class="bi bi-list"></i>
+    </button>
+  </div>
+
+  <!-- Master Layout Container -->
+  <div class="layout-container">
+
+    <!-- ======================================================================
+         LEFT SIDEBAR (Wireframe Profile, Socials, Navigation)
+         ====================================================================== -->
+    <aside class="sidebar" id="main-sidebar" aria-label="Sidebar Navigation">
+
+      <!-- Profile Photo -->
+      <div class="profile-photo-wrapper" data-aos="fade-down" data-aos-duration="600">
+        <img src="assets/profile_photo.jpg" alt="Jeron Opjer - Web Developer Portrait" class="profile-photo"
+          id="profile-img">
+      </div>
+
+      <!-- Name & Title Box -->
+      <div class="sidebar-identity" data-aos="fade-up" data-aos-duration="600">
+        <h1 class="sidebar-name">
+          <span>Jeron Opjer</span>
+          <span class="verified-name-badge" title="Verified & Legit Developer Profile" data-bs-toggle="tooltip">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-label="Verified Profile">
+              <path d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91s-2.52-1.27-3.91-.81c-.66-1.31-1.91-2.19-3.34-2.19s-2.67.88-3.33 2.19c-1.4-.46-2.91-.2-3.92.81s-1.26 2.52-.8 3.91c-1.31.67-2.2 1.91-2.2 3.34s.89 2.67 2.2 3.34c-.46 1.39-.21 2.9.8 3.91s2.52 1.26 3.91.81c.67 1.31 1.92 2.19 3.34 2.19s2.68-.88 3.34-2.19c1.39.45 2.9.2 3.91-.81s1.27-2.52.81-3.91c1.31-.67 2.19-1.91 2.19-3.34z" fill="#1d9bf0"/>
+              <polyline points="7.5 12.5 10.5 15.5 16.5 9.5" fill="none" stroke="#ffffff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </h1>
+        <span class="sidebar-title"><i class="bi bi-code-slash me-1"></i> Web Developer</span>
+        <p class="sidebar-meta">
+          Frontend & Digital Solutions<br>
+          Silay City, Philippines
+        </p>
+      </div>
+
+      <!-- Social Icons Row (Wireframe: [SOCIAL ICON] x4) -->
+      <div class="sidebar-social-row" aria-label="Social and Contact Profiles" data-aos="fade-up"
+        data-aos-duration="700">
+        <a href="https://www.linkedin.com/in/jeron-opjer-31267b355/" target="_blank" rel="noopener noreferrer"
+          class="social-icon-btn" data-bs-toggle="tooltip" data-bs-placement="top" title="LinkedIn Profile"
+          aria-label="LinkedIn">
+          <i class="bi bi-linkedin"></i>
+        </a>
+        <a href="mailto:jeronopjer@gmail.com" class="social-icon-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+          title="Email Me Directly" aria-label="Email Jeron">
+          <i class="bi bi-envelope-fill"></i>
+        </a>
+        <a href="tel:+639669648147" class="social-icon-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+          title="Call Phone Number" aria-label="Phone Number">
+          <i class="bi bi-telephone-fill"></i>
+        </a>
+      </div>
+
+      <!-- Vertical Navigation Buttons (Wireframe: [NAVIGATION BUTTON] list) -->
+      <nav class="sidebar-nav" aria-label="Primary Site Navigation">
+        <a href="#hero" class="nav-item-btn active" id="nav-hero">
+          <span class="nav-left"><i class="bi bi-compass nav-icon"></i> Overview</span>
+          <i class="bi bi-chevron-right nav-arrow"></i>
+        </a>
+        <a href="#skills" class="nav-item-btn" id="nav-skills">
+          <span class="nav-left"><i class="bi bi-code-square nav-icon"></i> Skills</span>
+          <i class="bi bi-chevron-right nav-arrow"></i>
+        </a>
+        <a href="#projects" class="nav-item-btn" id="nav-projects">
+          <span class="nav-left"><i class="bi bi-layers nav-icon"></i> Featured Projects</span>
+          <i class="bi bi-chevron-right nav-arrow"></i>
+        </a>
+        <a href="#about" class="nav-item-btn" id="nav-about">
+          <span class="nav-left"><i class="bi bi-person-badge nav-icon"></i> About Me</span>
+          <i class="bi bi-chevron-right nav-arrow"></i>
+        </a>
+        <a href="#credentials" class="nav-item-btn" id="nav-credentials">
+          <span class="nav-left"><i class="bi bi-mortarboard nav-icon"></i> Credentials</span>
+          <i class="bi bi-chevron-right nav-arrow"></i>
+        </a>
+        <a href="#services-values" class="nav-item-btn" id="nav-services">
+          <span class="nav-left"><i class="bi bi-grid-3x3-gap nav-icon"></i> Services & Values</span>
+          <i class="bi bi-chevron-right nav-arrow"></i>
+        </a>
+        <a href="#contact" class="nav-item-btn" id="nav-contact">
+          <span class="nav-left"><i class="bi bi-send nav-icon"></i> Contact</span>
+          <i class="bi bi-chevron-right nav-arrow"></i>
+        </a>
+      </nav>
+
+      <!-- Sidebar Contact Brief Card -->
+      <div class="sidebar-contact-brief">
+        <div class="brief-item">
+          <i class="bi bi-geo-alt-fill"></i>
+          <span>Silay City, Negros Occ.</span>
+        </div>
+        <div class="brief-item">
+          <i class="bi bi-envelope-at-fill"></i>
+          <span>jeronopjer@gmail.com</span>
+        </div>
+        <div class="brief-item">
+          <i class="bi bi-phone-fill"></i>
+          <span>+63 966 964 8147</span>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ======================================================================
+         MAIN CONTENT AREA
+         ====================================================================== -->
+    <main class="main-content">
+
+      <!-- ====================================================================
+           HERO / OVERVIEW SECTION (Wireframe Top)
+           ==================================================================== -->
+      <section class="hero-section" id="hero" aria-label="Overview & Introduction" data-aos="fade-up"
+        data-aos-duration="700">
+        <div class="hero-badge-pill">
+          <i class="bi bi-laptop"></i>
+          <span>Web Developer & Digital Solutions Specialist</span>
+        </div>
+
+        <h2 class="hero-title">
+          Building Responsive, User-Friendly <span class="typed-accent" id="typed-text"></span>
+        </h2>
+
+        <p class="hero-description">
+          To leverage my technical background in web development, database management, and digital document processing
+          to build responsive, user-friendly digital solutions. Dedicated to applying strong problem-solving skills and
+          technical proficiency to contribute effectively to a growing IT and software team.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn-portfolio-primary" id="cta-contact-btn">
+            <i class="bi bi-send-fill"></i> Call to Action / Get In Touch
+          </a>
+          <a href="#projects" class="btn-portfolio-secondary" id="cta-projects-btn">
+            <i class="bi bi-folder2-open"></i> Explore Projects
+          </a>
+          <a href="#credentials" class="btn-portfolio-secondary" id="cta-credentials-btn">
+            <i class="bi bi-file-earmark-person"></i> View Resume Details
+          </a>
+        </div>
+
+        <div class="hero-stats-row">
+          <div class="stat-item">
+            <span class="stat-number">6+</span>
+            <span class="stat-label">Industry Credentials</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">12+</span>
+            <span class="stat-label">Core Technical Skills</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">2023</span>
+            <span class="stat-label">Silay LGU Immersion</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Responsive & Semantic</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION 01 — SKILLS (Directly from Wireframe)
+           ==================================================================== -->
+      <section class="section-wrapper" id="skills" aria-label="Technical Skills" data-aos="fade-up"
+        data-aos-duration="600">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <span class="section-label">Section 01</span>
+            <h2 class="section-title">Skills & Core Proficiencies</h2>
+          </div>
+        </div>
+
+        <!-- Daily Drivers Marquee Banner (Moving Tech Ticker) -->
+        <div class="daily-drivers-banner" data-bs-toggle="tooltip" data-bs-placement="top"
+          title="Hover over any tool to pause scrolling">
+          <!-- Left Label Block (Fixed) -->
+          <div class="daily-drivers-header">
+            <span class="drivers-label">DAILY DRIVERS</span>
+            <strong class="drivers-title">Tools I work with</strong>
+          </div>
+
+          <!-- Vertical Divider -->
+          <div class="drivers-divider"></div>
+
+          <!-- Moving Marquee Viewport with Edge Fades -->
+          <div class="marquee-viewport">
+            <div class="marquee-track">
+              <!-- Set 1 -->
+              <div class="tool-pill"><i class="bi bi-file-code-fill text-warning"></i><span>Django</span></div>
+              <div class="tool-pill"><i class="bi bi-database-fill text-info"></i><span>MySQL</span></div>
+              <div class="tool-pill"><i class="bi bi-server text-primary"></i><span>PostgreSQL</span></div>
+              <div class="tool-pill"><i class="bi bi-palette-fill" style="color: #38bdf8;"></i><span>Tailwind CSS</span>
+              </div>
+              <div class="tool-pill"><span class="badge-prefix-js">JS</span><span>JavaScript</span></div>
+              <div class="tool-pill"><i class="bi bi-laptop-fill" style="color: #60a5fa;"></i><span>VS Code</span></div>
+              <div class="tool-pill"><i class="bi bi-magic" style="color: #c084fc;"></i><span>Cursor</span></div>
+              <div class="tool-pill"><i class="bi bi-git" style="color: #f43f5e;"></i><span>Git</span></div>
+              <div class="tool-pill"><i class="bi bi-triangle-fill text-white"></i><span>Vercel</span></div>
+              <div class="tool-pill"><i class="bi bi-layers-half text-white"></i><span>Next.js</span></div>
+              <div class="tool-pill"><i class="fa-brands fa-html5 text-danger"></i><span>HTML5</span></div>
+              <div class="tool-pill"><i class="fa-brands fa-css3-alt text-primary"></i><span>CSS3</span></div>
+              <div class="tool-pill"><i class="fa-brands fa-bootstrap" style="color: #a855f7;"></i><span>Bootstrap
+                  5</span></div>
+              <div class="tool-pill"><i class="fa-brands fa-python text-warning"></i><span>Python</span></div>
+              <div class="tool-pill"><i class="bi bi-bar-chart-line-fill"
+                  style="color: #eab308;"></i><span>Tableau</span></div>
+              <div class="tool-pill"><i class="bi bi-google text-primary"></i><span>Google Workspace</span></div>
+              <div class="tool-pill"><i class="bi bi-diagram-3-fill text-success"></i><span>ServiceNow</span></div>
+              <div class="tool-pill"><i class="bi bi-layout-text-window-reverse text-info"></i><span>UI/UX
+                  Wireframing</span></div>
+
+              <!-- Set 2 (Duplicate for Seamless Infinite Loop) -->
+              <div class="tool-pill" aria-hidden="true"><i
+                  class="bi bi-file-code-fill text-warning"></i><span>Django</span></div>
+              <div class="tool-pill" aria-hidden="true"><i class="bi bi-database-fill text-info"></i><span>MySQL</span>
+              </div>
+              <div class="tool-pill" aria-hidden="true"><i class="bi bi-server text-primary"></i><span>PostgreSQL</span>
+              </div>
+              <div class="tool-pill" aria-hidden="true"><i class="bi bi-palette-fill"
+                  style="color: #38bdf8;"></i><span>Tailwind CSS</span></div>
+              <div class="tool-pill" aria-hidden="true"><span class="badge-prefix-js">JS</span><span>JavaScript</span>
+              </div>
+              <div class="tool-pill" aria-hidden="true"><i class="bi bi-laptop-fill"
+                  style="color: #60a5fa;"></i><span>VS Code</span></div>
+              <div class="tool-pill" aria-hidden="true"><i class="bi bi-magic"
+                  style="color: #c084fc;"></i><span>Cursor</span></div>
+              <div class="tool-pill" aria-hidden="true"><i class="bi bi-git"
+                  style="color: #f43f5e;"></i><span>Git</span></div>
+              <div class="tool-pill" aria-hidden="true"><i
+                  class="bi bi-triangle-fill text-white"></i><span>Vercel</span></div>
+              <div class="tool-pill" aria-hidden="true"><i class="bi bi-layers-half text-white"></i><span>Next.js</span>
+              </div>
+              <div class="tool-pill" aria-hidden="true"><i class="fa-brands fa-html5 text-danger"></i><span>HTML5</span>
+              </div>
+              <div class="tool-pill" aria-hidden="true"><i
+                  class="fa-brands fa-css3-alt text-primary"></i><span>CSS3</span></div>
+              <div class="tool-pill" aria-hidden="true"><i class="fa-brands fa-bootstrap"
+                  style="color: #a855f7;"></i><span>Bootstrap 5</span></div>
+              <div class="tool-pill" aria-hidden="true"><i
+                  class="fa-brands fa-python text-warning"></i><span>Python</span></div>
+              <div class="tool-pill" aria-hidden="true"><i class="bi bi-bar-chart-line-fill"
+                  style="color: #eab308;"></i><span>Tableau</span></div>
+              <div class="tool-pill" aria-hidden="true"><i class="bi bi-google text-primary"></i><span>Google
+                  Workspace</span></div>
+              <div class="tool-pill" aria-hidden="true"><i
+                  class="bi bi-diagram-3-fill text-success"></i><span>ServiceNow</span></div>
+              <div class="tool-pill" aria-hidden="true"><i
+                  class="bi bi-layout-text-window-reverse text-info"></i><span>UI/UX Wireframing</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           TWO COLUMN SECTION: [FEATURED PROJECT PREVIEW] & [ABOUT ME]
+           (Directly from Wireframe Layout)
+           ==================================================================== -->
+      <section class="two-column-grid" id="projects-and-about" aria-label="Featured Projects and About Me"
+        data-aos="fade-up" data-aos-duration="700">
+
+        <!-- LEFT COLUMN: FEATURED PROJECT PREVIEW -->
+        <div class="featured-project-card" id="projects">
+          <div class="section-header" style="margin-bottom: 12px;">
+            <div class="section-title-wrap">
+              <span class="section-label">Showcase</span>
+              <h2 class="section-title">Featured Project Preview</h2>
+            </div>
+          </div>
+
+          <!-- Project Tab Selectors -->
+          <div class="project-tabs-nav" id="project-tabs" role="tablist">
+            <button class="proj-tab-btn active" data-index="0" role="tab" aria-selected="true">
+              <i class="bi bi-box-seam me-1"></i> GovSupply Connect
+            </button>
+            <button class="proj-tab-btn" data-index="1" role="tab" aria-selected="false">
+              <i class="bi bi-shield-check me-1"></i> Public Project Transparency
+            </button>
+          </div>
+
+          <!-- Project Preview Image -->
+          <div class="project-preview-media">
+            <img src="assets/govsupply_connect.png"
+              alt="GovSupply Connect: A Municipal Procurement Transparency and Supply Distribution Monitoring System"
+              class="project-preview-img" id="featured-proj-img">
+            <span class="project-overlay-badge" id="featured-proj-badge"><i class="bi bi-shield-check me-1"></i>
+              Municipality of E.B. Magalona Portal</span>
+          </div>
+
+          <!-- Project Details -->
+          <div class="project-meta-box">
+            <h3 class="project-title" id="featured-proj-title">GOVSUPPLY CONNECT: A MUNICIPAL PROCUREMENT TRANSPARENCY
+              AND SUPPLY DISTRIBUTION MONITORING SYSTEM</h3>
+            <p class="project-desc" id="featured-proj-desc">
+              Official Municipal Government Portal engineered for the Municipality of E.B. Magalona. Deployed for
+              end-to-end procurement transparency, supply distribution tracking, multi-department requisitions, and
+              audit-ready public accountability.
+            </p>
+            <div class="project-tags-list" id="featured-proj-tags">
+              <span class="tech-tag">Web System / PHP</span>
+              <span class="tech-tag">Procurement Transparency</span>
+              <span class="tech-tag">Supply Distribution</span>
+              <span class="tech-tag">Municipal Portal</span>
+              <span class="tech-tag">MySQL</span>
+            </div>
+            <div class="project-action-btns">
+              <button class="btn-portfolio-primary btn-sm" id="open-modal-btn">
+                <i class="bi bi-eye-fill"></i> View Project Details
+              </button>
+              <a href="#contact" class="btn-portfolio-secondary btn-sm">
+                <i class="bi bi-chat-dots-fill"></i> Inquire Project
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: ABOUT ME (from Wireframe) -->
+        <div class="about-me-card" id="about">
+          <div class="section-header" style="margin-bottom: 12px;">
+            <div class="section-title-wrap">
+              <span class="section-label">Profile</span>
+              <h2 class="section-title">About Me</h2>
+            </div>
+          </div>
+
+          <!-- Compact Styled Profile ID Showcase (from Wireframe Image Placeholder) -->
+          <div class="about-id-showcase" role="button" data-bs-toggle="modal" data-bs-target="#aboutBioModal"
+            title="Click to view full bio, philosophy & hobbies" tabindex="0">
+            <div class="about-id-backdrop-layer"></div>
+            <div class="about-id-card-content">
+              <div class="about-id-avatar-wrap">
+                <img src="assets/profile_photo.jpg" alt="Jeron Opjer" class="about-id-avatar">
+                <span class="about-id-status-dot" title="Active Developer"></span>
+              </div>
+              <div class="about-id-info">
+                <div class="about-id-badge"><i class="bi bi-stars me-1"></i> Web Developer</div>
+                <h3 class="about-id-name">Jeron Opjer</h3>
+                <span class="about-id-location"><i class="bi bi-geo-alt-fill me-1"></i> Silay City, Philippines</span>
+              </div>
+              <div class="about-id-action">
+                <span class="about-id-cta-chip">
+                  <span>Full Bio & Hobbies</span>
+                  <i class="bi bi-arrow-up-right"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <p class="about-bio-text">
+            I am <strong>Jeron Opjer</strong>, a dedicated Web Developer and Digital Solutions Specialist based in Silay
+            City, Philippines.
+          </p>
+
+          <p class="about-bio-text" style="margin-top: -6px;">
+            My passion lies in crafting clean, accessible, and responsive user interfaces while engineering dependable
+            data workflows. With practical experience in digital document management from Silay City LGU, verified
+            industry credentials, and modern web standards, I focus on building software that solves genuine community
+            and business problems.
+          </p>
+
+          <ul class="about-highlights-list">
+            <li class="about-highlight-item">
+              <i class="bi bi-check-circle-fill"></i>
+              <span><strong>Specialization:</strong> Modern Web Engineering & Digital Solutions</span>
+            </li>
+            <li class="about-highlight-item">
+              <i class="bi bi-check-circle-fill"></i>
+              <span><strong>Location:</strong> Prk. Mainuswagon, Brgy. Rizal, Silay City</span>
+            </li>
+            <li class="about-highlight-item">
+              <i class="bi bi-check-circle-fill"></i>
+              <span><strong>Languages:</strong> Filipino (Native), English (Proficient)</span>
+            </li>
+            <li class="about-highlight-item">
+              <i class="bi bi-check-circle-fill"></i>
+              <span><strong>Design Ethos:</strong> Clean code, responsive ergonomics, and high usability</span>
+            </li>
+          </ul>
+
+          <div class="about-credentials-pill-group">
+            <span class="cred-pill"><i class="bi bi-patch-check-fill"></i> Google Certified</span>
+            <span class="cred-pill"><i class="bi bi-shield-check"></i> Cyber & Audit</span>
+            <span class="cred-pill"><i class="bi bi-building"></i> Silay City LGU</span>
+            <span class="cred-pill"><i class="bi bi-code-slash"></i> Frontend & UI/UX</span>
+          </div>
+
+          <!-- Clickable Action to open Bio & Hobbies Modal -->
+          <button type="button" class="btn-about-view-more" data-bs-toggle="modal" data-bs-target="#aboutBioModal">
+            <i class="bi bi-person-lines-fill me-2 text-primary"></i>
+            <span>Read Bio, Mindset & Hobbies</span>
+            <i class="bi bi-arrow-right ms-auto"></i>
+          </button>
+        </div>
+
+      </section>
+
+      <!-- ====================================================================
+           SECTION: CREDENTIALS & CERTIFICATIONS (5 Verified Certificates)
+           ==================================================================== -->
+      <section class="credentials-section" id="credentials" aria-label="Professional Credentials and Certifications"
+        data-aos="fade-up" data-aos-duration="700">
+        <div class="credentials-header-wrapper">
+          <div class="section-title-wrap">
+            <span class="section-label"><i class="bi bi-patch-check-fill me-1"></i> Verified Honors</span>
+            <h2 class="section-title">Credentials & Certifications</h2>
+            <p class="section-subtitle">
+              Industry-standard certifications validating expertise in IT Systems Support, Generative AI, Systems
+              Auditing, Cybersecurity, IT Leadership, and Data Analytics.
+            </p>
+          </div>
+          <a href="https://www.linkedin.com/in/jeron-opjer-31267b355/details/certifications/" target="_blank"
+            rel="noopener noreferrer" class="btn-cert-linkedin-all" data-bs-toggle="tooltip" data-bs-placement="left"
+            title="View all licenses and certifications on LinkedIn">
+            <i class="bi bi-linkedin"></i>
+            <span>LinkedIn Certifications</span>
+            <i class="bi bi-box-arrow-up-right ms-1"></i>
+          </a>
+        </div>
+
+        <div class="credentials-grid">
+          <!-- CERTIFICATE 1: Google IT Support -->
+          <div class="cert-card" data-issuer="google" data-aos="fade-up" data-aos-delay="100">
+            <div class="cert-card-top">
+              <div class="cert-issuer-box cert-issuer-google">
+                <i class="bi bi-google"></i>
+              </div>
+              <div class="cert-meta">
+                <span class="cert-issuer-name">Google • Coursera</span>
+                <span class="cert-issue-date"><i class="bi bi-calendar3 me-1"></i> Issued Oct 2025</span>
+              </div>
+              <span class="cert-verified-badge" title="Verified Professional Credential">
+                <i class="bi bi-patch-check-fill"></i> Verified
+              </span>
+            </div>
+
+            <h3 class="cert-card-title">Google IT Support Professional Certificate</h3>
+
+            <p class="cert-card-desc">
+              Comprehensive 5-course specialization covering computer networking, system administration, operating
+              systems (Linux & Windows), cybersecurity defense, and technical support troubleshooting.
+            </p>
+
+            <div class="cert-id-row">
+              <div class="cert-id-label">Credential ID:</div>
+              <code class="cert-id-code">DSTAYLANSH2V</code>
+              <button class="cert-copy-btn copy-badge-btn" data-copy="DSTAYLANSH2V" title="Copy Credential ID"
+                aria-label="Copy Credential ID">
+                <i class="bi bi-clipboard"></i>
+              </button>
+            </div>
+
+            <div class="cert-tags-wrap">
+              <span class="cert-tag">Technical Support</span>
+              <span class="cert-tag">Computer Networking</span>
+              <span class="cert-tag">Linux & Windows</span>
+              <span class="cert-tag">System Administration</span>
+              <span class="cert-tag">IT Security</span>
+            </div>
+
+            <div class="cert-footer-action">
+              <a href="https://www.coursera.org/account/accomplishments/specialization/DSTAYLANSH2V?utm_source=android&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=s12n"
+                target="_blank" rel="noopener noreferrer" class="btn-verify-cert">
+                <span>Verify on Coursera</span>
+                <i class="bi bi-box-arrow-up-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- CERTIFICATE 2: Google AI Essentials -->
+          <div class="cert-card" data-issuer="google" data-aos="fade-up" data-aos-delay="150">
+            <div class="cert-card-top">
+              <div class="cert-issuer-box cert-issuer-google-ai">
+                <i class="bi bi-robot"></i>
+              </div>
+              <div class="cert-meta">
+                <span class="cert-issuer-name">Google • Coursera</span>
+                <span class="cert-issue-date"><i class="bi bi-calendar3 me-1"></i> Issued Oct 2025</span>
+              </div>
+              <span class="cert-verified-badge" title="Verified Professional Credential">
+                <i class="bi bi-patch-check-fill"></i> Verified
+              </span>
+            </div>
+
+            <h3 class="cert-card-title">Google AI Essentials Professional Certificate</h3>
+
+            <p class="cert-card-desc">
+              Mastery of generative AI concepts, prompt engineering strategies, responsible artificial intelligence
+              implementation, and AI-assisted workflow productivity for modern technology solutions.
+            </p>
+
+            <div class="cert-id-row">
+              <div class="cert-id-label">Credential ID:</div>
+              <code class="cert-id-code">YDV4MDT45OD4</code>
+              <button class="cert-copy-btn copy-badge-btn" data-copy="YDV4MDT45OD4" title="Copy Credential ID"
+                aria-label="Copy Credential ID">
+                <i class="bi bi-clipboard"></i>
+              </button>
+            </div>
+
+            <div class="cert-tags-wrap">
+              <span class="cert-tag">Generative AI</span>
+              <span class="cert-tag">Prompt Engineering</span>
+              <span class="cert-tag">Responsible AI</span>
+              <span class="cert-tag">Workflow Automation</span>
+              <span class="cert-tag">AI Productivity</span>
+            </div>
+
+            <div class="cert-footer-action">
+              <a href="https://www.coursera.org/account/accomplishments/specialization/YDV4MDT45OD4" target="_blank"
+                rel="noopener noreferrer" class="btn-verify-cert">
+                <span>Verify on Coursera</span>
+                <i class="bi bi-box-arrow-up-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- CERTIFICATE 3: ISACA CISA Cert Prep -->
+          <div class="cert-card" data-issuer="linkedin" data-aos="fade-up" data-aos-delay="200">
+            <div class="cert-card-top">
+              <div class="cert-issuer-box cert-issuer-linkedin">
+                <i class="bi bi-linkedin"></i>
+              </div>
+              <div class="cert-meta">
+                <span class="cert-issuer-name">LinkedIn Learning / Cybrary</span>
+                <span class="cert-issue-date"><i class="bi bi-calendar3 me-1"></i> Issued Nov 2025</span>
+              </div>
+              <span class="cert-verified-badge" title="Verified Professional Credential">
+                <i class="bi bi-patch-check-fill"></i> Verified
+              </span>
+            </div>
+
+            <h3 class="cert-card-title">ISACA Certified Information Systems Auditor (CISA) Cert Prep</h3>
+
+            <p class="cert-card-desc">
+              Advanced preparation in Information Systems Auditing process, IT Governance & Management, Information
+              Asset Protection, and Business Resilience aligned with global ISACA standards.
+            </p>
+
+            <div class="cert-id-row">
+              <div class="cert-id-label">Credential ID:</div>
+              <code class="cert-id-code"
+                title="a7c4c0cfaaca1844b19e731055d0880f498abea2bd02c50c5cafd709a77cd09e">a7c4c0cf...7cd09e</code>
+              <button class="cert-copy-btn copy-badge-btn"
+                data-copy="a7c4c0cfaaca1844b19e731055d0880f498abea2bd02c50c5cafd709a77cd09e"
+                title="Copy Full Credential ID" aria-label="Copy Credential ID">
+                <i class="bi bi-clipboard"></i>
+              </button>
+            </div>
+
+            <div class="cert-tags-wrap">
+              <span class="cert-tag">IS Auditing</span>
+              <span class="cert-tag">IT Governance</span>
+              <span class="cert-tag">Asset Protection</span>
+              <span class="cert-tag">Risk Assessment</span>
+              <span class="cert-tag">Compliance</span>
+            </div>
+
+            <div class="cert-footer-action">
+              <a href="https://www.linkedin.com/learning/certificates/a7c4c0cfaaca1844b19e731055d0880f498abea2bd02c50c5cafd709a77cd09e?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BfrDQDgqXSTq3OvKzcr76Ew%3D%3D"
+                target="_blank" rel="noopener noreferrer" class="btn-verify-cert">
+                <span>Verify on LinkedIn</span>
+                <i class="bi bi-box-arrow-up-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- CERTIFICATE 4: IT Fundamentals: Security -->
+          <div class="cert-card" data-issuer="cybrary" data-aos="fade-up" data-aos-delay="250">
+            <div class="cert-card-top">
+              <div class="cert-issuer-box cert-issuer-cybrary">
+                <i class="bi bi-shield-lock-fill"></i>
+              </div>
+              <div class="cert-meta">
+                <span class="cert-issuer-name">Cybrary</span>
+                <span class="cert-issue-date"><i class="bi bi-calendar3 me-1"></i> Issued May 2025</span>
+              </div>
+              <span class="cert-verified-badge" title="Verified Continuing Education Credential">
+                <i class="bi bi-patch-check-fill"></i> Verified
+              </span>
+            </div>
+
+            <h3 class="cert-card-title">IT Fundamentals: Security</h3>
+
+            <p class="cert-card-desc">
+              Accredited Continuing Professional Education (3 CEUs / CPEs) focusing on essential security principles,
+              authentication, network defense fundamentals, and safeguarding organizational assets.
+            </p>
+
+            <div class="cert-id-row">
+              <div class="cert-id-label">Credential ID:</div>
+              <code class="cert-id-code">CC-158ee06e-7bd8-4cdf-898a</code>
+              <button class="cert-copy-btn copy-badge-btn" data-copy="CC-158ee06e-7bd8-4cdf-898a-aefc188c8970"
+                title="Copy Full Certificate Number" aria-label="Copy Certificate Number">
+                <i class="bi bi-clipboard"></i>
+              </button>
+            </div>
+
+            <div class="cert-tags-wrap">
+              <span class="cert-tag">Cybersecurity</span>
+              <span class="cert-tag">Threat Mitigation</span>
+              <span class="cert-tag">3 CEUs / CPEs</span>
+              <span class="cert-tag">Access Control</span>
+              <span class="cert-tag">Network Defense</span>
+            </div>
+
+            <div class="cert-footer-action">
+              <a href="https://app.cybrary.it/courses/api/certificate/CC-158ee06e-7bd8-4cdf-898a-aefc188c8970/view"
+                target="_blank" rel="noopener noreferrer" class="btn-verify-cert">
+                <span>View Cybrary Certificate</span>
+                <i class="bi bi-box-arrow-up-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- CERTIFICATE 5: ServiceNow IT Leadership -->
+          <div class="cert-card" data-issuer="servicenow" data-aos="fade-up" data-aos-delay="300">
+            <div class="cert-card-top">
+              <div class="cert-issuer-box cert-issuer-servicenow">
+                <i class="bi bi-diagram-3-fill"></i>
+              </div>
+              <div class="cert-meta">
+                <span class="cert-issuer-name">ServiceNow • LinkedIn Learning</span>
+                <span class="cert-issue-date"><i class="bi bi-calendar3 me-1"></i> Issued Nov 2025</span>
+              </div>
+              <span class="cert-verified-badge" title="Verified Professional Credential">
+                <i class="bi bi-patch-check-fill"></i> Verified
+              </span>
+            </div>
+
+            <h3 class="cert-card-title">ServiceNow IT Leadership Professional Certificate</h3>
+
+            <p class="cert-card-desc">
+              Strategic IT leadership and governance program focusing on IT enterprise architecture, service management,
+              digital transformation workflows, and technology program leadership.
+            </p>
+
+            <div class="cert-id-row">
+              <div class="cert-id-label">Credential ID:</div>
+              <code class="cert-id-code"
+                title="daf3b09204292bfdb787857f5d80e51bfa38dceece650be90f2b8accf37ce3b8">daf3b092...37ce3b8</code>
+              <button class="cert-copy-btn copy-badge-btn"
+                data-copy="daf3b09204292bfdb787857f5d80e51bfa38dceece650be90f2b8accf37ce3b8"
+                title="Copy Full Credential ID" aria-label="Copy Credential ID">
+                <i class="bi bi-clipboard"></i>
+              </button>
+            </div>
+
+            <div class="cert-tags-wrap">
+              <span class="cert-tag">IT Leadership</span>
+              <span class="cert-tag">IT Architectures</span>
+              <span class="cert-tag">Strategic Planning</span>
+              <span class="cert-tag">Service Management</span>
+              <span class="cert-tag">Program Management</span>
+            </div>
+
+            <div class="cert-footer-action">
+              <a href="https://www.linkedin.com/learning/certificates/daf3b09204292bfdb787857f5d80e51bfa38dceece650be90f2b8accf37ce3b8?contentTrackingId=cfWrlj%2BXSO6xU26QAEQgbQ%3D%3D&viewName=premium-nav-upsell-text&upsellOrderOrigin=Tracking%3Av1%3Apremium_nav_upsell_text_winback%3ANav%3AIn-Product"
+                target="_blank" rel="noopener noreferrer" class="btn-verify-cert">
+                <span>Verify on LinkedIn</span>
+                <i class="bi bi-box-arrow-up-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- CERTIFICATE 6: Google Data Analytics -->
+          <div class="cert-card" data-issuer="google" data-aos="fade-up" data-aos-delay="350">
+            <div class="cert-card-top">
+              <div class="cert-issuer-box cert-issuer-google-data">
+                <i class="bi bi-bar-chart-line-fill"></i>
+              </div>
+              <div class="cert-meta">
+                <span class="cert-issuer-name">Google • Coursera</span>
+                <span class="cert-issue-date"><i class="bi bi-calendar3 me-1"></i> Issued Oct 2025</span>
+              </div>
+              <span class="cert-verified-badge" title="Verified Professional Credential">
+                <i class="bi bi-patch-check-fill"></i> Verified
+              </span>
+            </div>
+
+            <h3 class="cert-card-title">Google Data Analytics Professional Certificate</h3>
+
+            <p class="cert-card-desc">
+              Comprehensive 8-course specialization covering data cleaning, relational database queries with SQL,
+              spreadsheet modeling, R programming, and interactive data visualization with Tableau.
+            </p>
+
+            <div class="cert-id-row">
+              <div class="cert-id-label">Credential ID:</div>
+              <code class="cert-id-code">XBJOAYA6ZOWU</code>
+              <button class="cert-copy-btn copy-badge-btn" data-copy="XBJOAYA6ZOWU" title="Copy Credential ID"
+                aria-label="Copy Credential ID">
+                <i class="bi bi-clipboard"></i>
+              </button>
+            </div>
+
+            <div class="cert-tags-wrap">
+              <span class="cert-tag">Data Analytics</span>
+              <span class="cert-tag">SQL Databases</span>
+              <span class="cert-tag">Tableau Visualization</span>
+              <span class="cert-tag">R Programming</span>
+              <span class="cert-tag">Spreadsheets</span>
+            </div>
+
+            <div class="cert-footer-action">
+              <a href="https://www.coursera.org/account/accomplishments/specialization/XBJOAYA6ZOWU?utm_source=android&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=s12n"
+                target="_blank" rel="noopener noreferrer" class="btn-verify-cert">
+                <span>Verify on Coursera</span>
+                <i class="bi bi-box-arrow-up-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION: SERVICES & VALUES (2-Column Grid)
+           ==================================================================== -->
+      <section class="services-values-grid" id="services-values" aria-label="Services and Core Values"
+        data-aos="fade-up" data-aos-duration="700">
+
+        <!-- CARD 1: [SERVICES] -->
+        <div class="pillar-card pillar-services">
+          <div class="pillar-header">
+            <div class="pillar-icon-box">
+              <i class="bi bi-briefcase-fill"></i>
+            </div>
+            <h3 class="pillar-title">Services</h3>
+          </div>
+
+          <div class="services-card-list">
+            <div class="service-card-item">
+              <div class="service-item-title">
+                <i class="bi bi-code-slash"></i> Responsive Web Development
+              </div>
+              <p class="service-item-desc">
+                Developing clean, modern, and accessible web pages utilizing HTML5, CSS3, JavaScript, Bootstrap 5, and
+                responsive layouts.
+              </p>
+            </div>
+
+            <div class="service-card-item">
+              <div class="service-item-title">
+                <i class="bi bi-layout-text-window-reverse"></i> UI/UX Layout & Prototyping
+              </div>
+              <p class="service-item-desc">
+                Translating low-fidelity wireframes into high-fidelity functional interfaces with attention to user
+                flow, hierarchy, and ergonomics.
+              </p>
+            </div>
+
+            <div class="service-card-item">
+              <div class="service-item-title">
+                <i class="bi bi-database-fill"></i> Database & IT Systems
+              </div>
+              <p class="service-item-desc">
+                Database structuring, query management, computer system troubleshooting, and local networking
+                configuration.
+              </p>
+            </div>
+
+            <div class="service-card-item">
+              <div class="service-item-title">
+                <i class="bi bi-file-earmark-text-fill"></i> Workflow Digitization
+              </div>
+              <p class="service-item-desc">
+                Digitizing physical paperwork, spreadsheet automation with Microsoft Office & Google Workspace, and
+                records archiving.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: [VALUES] -->
+        <div class="pillar-card pillar-values">
+          <div class="pillar-header">
+            <div class="pillar-icon-box">
+              <i class="bi bi-compass-fill"></i>
+            </div>
+            <h3 class="pillar-title">Values</h3>
+          </div>
+
+          <div class="values-card-list">
+            <div class="value-card-item">
+              <div class="value-item-title">
+                <i class="bi bi-bullseye"></i> Precision & Attention to Detail
+              </div>
+              <p class="value-item-desc">
+                Dedicated to producing clean code, error-free document processing, and pixel-precise responsive layouts.
+              </p>
+            </div>
+
+            <div class="value-card-item">
+              <div class="value-item-title">
+                <i class="bi bi-lightbulb-fill"></i> Problem-Solving Mindset
+              </div>
+              <p class="value-item-desc">
+                Approaching technical challenges methodically to formulate structured, scalable, and practical digital
+                answers.
+              </p>
+            </div>
+
+            <div class="value-card-item">
+              <div class="value-item-title">
+                <i class="bi bi-graph-up"></i> Continuous Growth
+              </div>
+              <p class="value-item-desc">
+                Constantly learning modern web standards, software tools, and best engineering practices to stay
+                current.
+              </p>
+            </div>
+
+            <div class="value-card-item">
+              <div class="value-item-title">
+                <i class="bi bi-people-fill"></i> Integrity & Teamwork
+              </div>
+              <p class="value-item-desc">
+                Demonstrating reliability, respect, and clear bilingual communication (Filipino & English) in every
+                collaborative environment.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ====================================================================
+           SECTION: CONTACT (from Wireframe)
+           [CONTACT INFO LABELS] (Left) & [INPUT FORM] (Right)
+           ==================================================================== -->
+      <section class="section-wrapper" id="contact" aria-label="Contact Jeron Opjer" data-aos="fade-up"
+        data-aos-duration="700">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <span class="section-label">Get in Touch</span>
+            <h2 class="section-title">Contact & Communication</h2>
+          </div>
+        </div>
+
+        <div class="contact-section-grid">
+
+          <!-- Left Column: [CONTACT INFO LABELS] -->
+          <div class="contact-info-col">
+            <div>
+              <h3 class="contact-info-heading">Let's Connect & Collaborate</h3>
+              <p class="contact-info-desc">
+                I am open to web development opportunities, internships, freelance projects, and technical roles. Feel
+                free to reach out directly through any channel below.
+              </p>
+
+              <div class="contact-items-list">
+                <!-- Email Label -->
+                <a href="mailto:jeronopjer@gmail.com" class="contact-label-card" title="Click to send email">
+                  <div class="contact-icon-box">
+                    <i class="bi bi-envelope-fill"></i>
+                  </div>
+                  <div class="contact-text-box">
+                    <span class="contact-type">Email Address</span>
+                    <span class="contact-val">jeronopjer@gmail.com</span>
+                  </div>
+                  <button type="button" class="copy-badge-btn" data-copy="jeronopjer@gmail.com" data-bs-toggle="tooltip"
+                    title="Copy Email">
+                    <i class="bi bi-clipboard"></i>
+                  </button>
+                </a>
+
+                <!-- Phone Label -->
+                <a href="tel:+639669648147" class="contact-label-card" title="Click to call">
+                  <div class="contact-icon-box">
+                    <i class="bi bi-telephone-fill"></i>
+                  </div>
+                  <div class="contact-text-box">
+                    <span class="contact-type">Phone / Mobile</span>
+                    <span class="contact-val">+639669648147</span>
+                  </div>
+                  <button type="button" class="copy-badge-btn" data-copy="+639669648147" data-bs-toggle="tooltip"
+                    title="Copy Phone">
+                    <i class="bi bi-clipboard"></i>
+                  </button>
+                </a>
+
+                <!-- Location Label -->
+                <div class="contact-label-card">
+                  <div class="contact-icon-box">
+                    <i class="bi bi-geo-alt-fill"></i>
+                  </div>
+                  <div class="contact-text-box">
+                    <span class="contact-type">Location / Address</span>
+                    <span class="contact-val">Prk. Mainuswagon, Brgy. Rizal, Silay City</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Language & Availability status -->
+            <div
+              style="font-size: 0.82rem; color: var(--text-secondary); padding-top: 14px; border-top: 1px solid var(--border-subtle);">
+              <span><i class="bi bi-translate text-primary me-1"></i> Languages: <strong>Filipino (Native), English
+                  (Proficient)</strong></span>
+            </div>
+          </div>
+
+          <!-- Right Column: [INPUT FORM] (Name, Email, Message, Submit Button) -->
+          <div class="contact-form-col">
+            <form id="contact-form" novalidate>
+              <div class="mb-3">
+                <label for="contact-name" class="form-label">Name <span class="text-primary">*</span></label>
+                <input type="text" id="contact-name" name="name" class="form-control" placeholder="e.g. Maria Santos"
+                  required>
+              </div>
+
+              <div class="mb-3">
+                <label for="contact-email" class="form-label">Email <span class="text-primary">*</span></label>
+                <input type="email" id="contact-email" name="email" class="form-control"
+                  placeholder="e.g. maria@example.com" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="contact-service" class="form-label">Subject / Purpose</label>
+                <select id="contact-service" name="service" class="form-select">
+                  <option value="Web Development Project">Web Development Project</option>
+                  <option value="Internship / OJT Opportunity">Internship / OJT Opportunity</option>
+                  <option value="UI/UX Wireframing Consultation">UI/UX Wireframing Consultation</option>
+                  <option value="General Inquiry">General Inquiry</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="contact-message" class="form-label">Message <span class="text-primary">*</span></label>
+                <textarea id="contact-message" name="message" class="form-control" rows="4"
+                  placeholder="Write your message or project requirements here..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-portfolio-primary w-100 justify-content-center" id="submit-btn">
+                <i class="bi bi-send-fill me-1"></i> Send Message
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           FOOTER (5 LINK COLUMNS - Directly from Wireframe)
+           ==================================================================== -->
+      <footer class="footer-container" id="site-footer" data-aos="fade-up" data-aos-duration="600">
+        <div class="footer-columns-grid">
+
+          <!-- Column 1: Identity & Professional Focus -->
+          <div class="footer-col">
+            <h4 class="footer-col-title">Jeron Opjer</h4>
+            <p class="footer-col-desc">
+              Web Developer & Digital Solutions Specialist dedicated to crafting fast, accessible, and user-centric web
+              applications.
+            </p>
+            <div style="font-size: 0.78rem; color: var(--text-muted);">
+              <i class="bi bi-shield-check" style="color: var(--accent-teal);"></i> Silay City, Negros Occidental
+            </div>
+          </div>
+
+          <!-- Column 2: Navigation Links -->
+          <div class="footer-col">
+            <h4 class="footer-col-title">Navigation</h4>
+            <ul class="footer-link-list">
+              <li><a href="#hero"><i class="bi bi-chevron-right"></i> Overview</a></li>
+              <li><a href="#skills"><i class="bi bi-chevron-right"></i> Skills </a></li>
+              <li><a href="#projects"><i class="bi bi-chevron-right"></i> Featured Projects</a></li>
+              <li><a href="#about"><i class="bi bi-chevron-right"></i> About Me</a></li>
+              <li><a href="#contact"><i class="bi bi-chevron-right"></i> Contact Me</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Credentials -->
+          <div class="footer-col">
+            <h4 class="footer-col-title">Credentials</h4>
+            <ul class="footer-link-list">
+              <li><a href="#credentials"><i class="bi bi-chevron-right"></i> Google IT Support</a></li>
+              <li><a href="#credentials"><i class="bi bi-chevron-right"></i> Google AI Essentials</a></li>
+              <li><a href="#credentials"><i class="bi bi-chevron-right"></i> ISACA CISA Prep</a></li>
+              <li><a href="#credentials"><i class="bi bi-chevron-right"></i> Cybrary Security</a></li>
+              <li><a href="#credentials"><i class="bi bi-chevron-right"></i> ServiceNow IT Leadership</a></li>
+              <li><a href="#credentials"><i class="bi bi-chevron-right"></i> Google Data Analytics</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Services -->
+          <div class="footer-col">
+            <h4 class="footer-col-title">Services</h4>
+            <ul class="footer-link-list">
+              <li><a href="#services-values"><i class="bi bi-chevron-right"></i> Web Development</a></li>
+              <li><a href="#services-values"><i class="bi bi-chevron-right"></i> UI/UX Wireframing</a></li>
+              <li><a href="#services-values"><i class="bi bi-chevron-right"></i> Database Management</a></li>
+              <li><a href="#services-values"><i class="bi bi-chevron-right"></i> Workflow Processing</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 5: Connect -->
+          <div class="footer-col">
+            <h4 class="footer-col-title">Connect</h4>
+            <ul class="footer-link-list">
+              <li><a href="mailto:jeronopjer@gmail.com"><i class="bi bi-envelope"></i> Email</a></li>
+              <li><a href="tel:+639669648147"><i class="bi bi-phone"></i> Mobile Phone</a></li>
+              <li><a href="https://www.linkedin.com/in/jeron-opjer-31267b355/" target="_blank"
+                  rel="noopener noreferrer"><i class="bi bi-linkedin"></i> LinkedIn</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Footer Bottom Bar -->
+        <div class="footer-bottom-bar">
+          <div>
+            © 2026 <strong>Jeron A. Opjer</strong>. All Rights Reserved.
+          </div>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- ========================================================================
+       BOOTSTRAP MODAL FOR FEATURED PROJECT DETAILS
+       ======================================================================== -->
+  <div class="modal fade" id="bootstrapProjectModal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-content-custom">
+        <div class="modal-header modal-header-custom">
+          <div>
+            <span class="uni-badge mb-1 d-inline-block" id="modal-category">Municipal Procurement & Supply Chain
+              Monitoring</span>
+            <h4 class="modal-title h5 mb-0" id="modal-title" style="color: var(--text-main);">
+              GOVSUPPLY CONNECT: A MUNICIPAL PROCUREMENT TRANSPARENCY AND SUPPLY DISTRIBUTION MONITORING SYSTEM
+            </h4>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body modal-body-custom">
+          <div
+            style="border-radius: var(--radius-md); overflow: hidden; margin-bottom: 18px; border: 1px solid var(--border-light);">
+            <img src="assets/govsupply_connect.png" id="modal-img" alt="Project Detail"
+              style="width: 100%; height: auto; display: block;">
+          </div>
+
+          <p id="modal-desc"
+            style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.65; margin-bottom: 18px;">
+            Official Municipal Government Portal engineered for the Municipality of E.B. Magalona. Deployed for
+            end-to-end procurement transparency, supply distribution tracking, multi-department requisitions, and
+            audit-ready public accountability.
+          </p>
+
+          <div>
+            <h5 style="font-size: 0.88rem; color: var(--text-main); margin-bottom: 8px;">Key Capabilities &
+              Architecture:</h5>
+            <ul
+              style="color: var(--text-secondary); font-size: 0.85rem; padding-left: 20px; display: flex; flex-direction: column; gap: 6px;"
+              id="modal-features">
+              <li>Secure municipal portal authentication for department heads and supply officers</li>
+              <li>Real-time tracking of procurement requests, purchase orders, and inventory distribution</li>
+              <li>Automated transparency logging and reporting aligned with municipal governance standards</li>
+              <li>Inter-office requisition workflows with audit trails for accountability and public service</li>
+            </ul>
+          </div>
+        </div>
+        <div class="modal-footer modal-footer-custom">
+          <a href="#contact" class="btn-portfolio-primary btn-sm" data-bs-dismiss="modal">
+            <i class="bi bi-send-fill me-1"></i> Inquire About This Project
+          </a>
+          <button type="button" class="btn-portfolio-secondary btn-sm" data-bs-dismiss="modal">
+            <i class="bi bi-x-lg me-1"></i> Close Preview
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       BOOTSTRAP MODAL: ABOUT ME & HOBBIES (Mindset & Passions)
+       ======================================================================== -->
+  <div class="modal fade" id="aboutBioModal" tabindex="-1" aria-labelledby="aboutBioModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+      <div class="modal-content modal-content-custom about-modal-content">
+
+        <!-- Modal Header with Profile Overview -->
+        <div class="modal-header modal-header-custom about-modal-header border-0 pb-0">
+          <div class="about-modal-hero d-flex align-items-center gap-3 w-100">
+            <div class="about-modal-avatar-box">
+              <img src="assets/profile_photo.jpg" alt="Jeron Opjer" class="about-modal-avatar">
+            </div>
+            <div class="about-modal-hero-text flex-grow-1">
+              <div class="about-modal-tag"><i class="bi bi-stars me-1"></i> Web Developer & Digital Solutions</div>
+              <h3 class="modal-title h4 mb-1" id="aboutBioModalLabel"
+                style="color: var(--text-main); font-weight: 700;">
+                Jeron Opjer
+              </h3>
+              <p class="about-modal-sub mb-2">Web Developer • Systems Specialist • Silay City, Negros Occidental</p>
+              <div class="about-modal-contact-chips d-flex flex-wrap gap-2">
+                <span class="contact-chip"><i class="bi bi-geo-alt-fill text-danger me-1"></i> Silay City, PH</span>
+                <span class="contact-chip"><i class="bi bi-envelope-fill text-info me-1"></i>
+                  jeronopjer@gmail.com</span>
+                <span class="contact-chip"><i class="bi bi-telephone-fill text-success me-1"></i> +63 966 964
+                  8147</span>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn-close btn-close-white align-self-start" data-bs-dismiss="modal"
+            aria-label="Close"></button>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="modal-body modal-body-custom pt-3">
+
+          <!-- Professional Overview & Philosophy Box -->
+          <div class="about-modal-section-card mb-4">
+            <h4 class="about-modal-section-title">
+              <i class="bi bi-briefcase-fill me-2 text-primary"></i> Professional Overview & Philosophy
+            </h4>
+            <p class="about-modal-text">
+              Dedicated web developer and digital solutions specialist skilled in building dynamic, responsive web
+              applications from the ground up. Proficient in modern front-end design, back-end logic, and database
+              architecture, with a solid background in civic systems, municipal workflows, and cloud data practices.
+            </p>
+            <p class="about-modal-text mb-0">
+              From dynamic, accessible user interfaces to resilient data workflows and secure municipal portals, I
+              engineer high-performance web solutions built for longevity, speed, and real-world civic impact.
+            </p>
+          </div>
+
+          <!-- Hobbies & Engineering Superpowers (Referencing Image 2 & User Request) -->
+          <div class="about-modal-hobbies-section">
+            <div class="text-center mb-3">
+              <span class="about-modal-tag mx-auto d-inline-block mb-1">
+                <i class="bi bi-lightning-charge-fill me-1 text-warning"></i> Passions & Mindset
+              </span>
+              <h4 class="h5 mb-1" style="color: var(--text-main); font-weight: 700;">
+                Hobbies That Fuel Engineering Excellence
+              </h4>
+              <p style="color: var(--text-secondary); font-size: 0.84rem; max-width: 580px; margin: 0 auto;">
+                Beyond writing code, my hobbies cultivate strategic problem-solving, rapid adaptability, situational
+                awareness, and collaborative teamwork.
+              </p>
+            </div>
+
+            <!-- 3 Hobbies Grid -->
+            <div class="hobbies-cards-grid">
+
+              <!-- Hobby 1: Playing Online Games -->
+              <div class="hobby-card">
+                <div class="hobby-card-header">
+                  <div class="hobby-icon-box hobby-game">
+                    <i class="bi bi-controller"></i>
+                  </div>
+                  <span class="hobby-badge">Logic & Mechanics</span>
+                </div>
+                <h5 class="hobby-title">Playing Online Games</h5>
+                <p class="hobby-desc">
+                  Sharpens real-time tactical decision-making, rapid pattern recognition, and squad communication under
+                  pressure. Navigating intricate game mechanics and competitive metas mirrors troubleshooting complex
+                  codebases and orchestrating modular architectures.
+                </p>
+                <div class="hobby-footer-tags">
+                  <span>Tactical Strategy</span>
+                  <span>Team Coordination</span>
+                  <span>Rapid Reflexes</span>
+                </div>
+              </div>
+
+              <!-- Hobby 2: Watching Movies -->
+              <div class="hobby-card">
+                <div class="hobby-card-header">
+                  <div class="hobby-icon-box hobby-movie">
+                    <i class="bi bi-film"></i>
+                  </div>
+                  <span class="hobby-badge">Visual Storytelling</span>
+                </div>
+                <h5 class="hobby-title">Watching Movies</h5>
+                <p class="hobby-desc">
+                  Inspires creative visual composition, immersive aesthetic rhythm, and narrative structure.
+                  Deconstructing cinematographic lighting, color palettes, and frame pacing directly influences how I
+                  compose harmonious UI layouts, interactive transitions, and engaging UX narratives.
+                </p>
+                <div class="hobby-footer-tags">
+                  <span>Creative Direction</span>
+                  <span>Visual Pacing</span>
+                  <span>UI Aesthetics</span>
+                </div>
+              </div>
+
+              <!-- Hobby 3: Riding Using Motorcycle / Rides -->
+              <div class="hobby-card">
+                <div class="hobby-card-header">
+                  <div class="hobby-icon-box hobby-ride">
+                    <i class="bi bi-compass"></i>
+                  </div>
+                  <span class="hobby-badge">Focus & Situational Awareness</span>
+                </div>
+                <h5 class="hobby-title">Motorcycle Riding & Rides</h5>
+                <p class="hobby-desc">
+                  Demands undivided focus, defensive spatial awareness, and split-second precision on the open road.
+                  Exploring scenic routes across Negros Occidental provides mental clarity, relieves screen fatigue, and
+                  recharges strategic creative energy.
+                </p>
+                <div class="hobby-footer-tags">
+                  <span>Peak Focus</span>
+                  <span>Road Navigation</span>
+                  <span>Mental Reset</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Values / Engineering Mindset Pills -->
+          <div
+            class="about-modal-values-row mt-4 pt-3 border-top border-secondary border-opacity-25 d-flex flex-wrap align-items-center justify-content-between gap-2">
+            <span class="value-item"><i class="bi bi-check2-circle text-success me-1"></i> Continuous Craft</span>
+            <span class="value-item"><i class="bi bi-puzzle-fill text-warning me-1"></i> Logic & Mechanics</span>
+            <span class="value-item"><i class="bi bi-shield-check text-info me-1"></i> Defensive Architecture</span>
+            <span class="value-item"><i class="bi bi-heart-fill text-danger me-1"></i> Human-Centered UX</span>
+          </div>
+
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="modal-footer modal-footer-custom justify-content-between">
+          <a href="#contact" class="btn-portfolio-primary btn-sm" data-bs-dismiss="modal">
+            <i class="bi bi-send-fill me-1"></i> Connect & Collaborate
+          </a>
+          <button type="button" class="btn-portfolio-secondary btn-sm" data-bs-dismiss="modal">
+            <i class="bi bi-x-lg me-1"></i> Close
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1080;">
+    <div id="liveToast" class="toast toast-custom align-items-center" role="alert" aria-live="assertive"
+      aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body d-flex align-items-center gap-2">
+          <i class="bi bi-check-circle-fill text-success fs-5"></i>
+          <span id="toast-text">Message successfully received!</span>
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+          aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <!-- Bootstrap 5.3.3 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Typed.js for dynamic hero typing -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <!-- AOS (Animate on Scroll) -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Portfolio Interactive Script -->
+  <script src="script.js"></script>
+</body>
+
+</html>
