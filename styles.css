@@ -112,13 +112,14 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  scroll-padding-top: 30px;
+  scroll-padding-top: 75px;
 }
 
 section[id],
 .featured-project-card,
-.about-me-card {
-  scroll-margin-top: 30px;
+.about-me-card,
+#contact {
+  scroll-margin-top: 75px;
 }
 
 body {
@@ -1977,8 +1978,12 @@ body {
 
 /* ==========================================================================
    SECTION: CONTACT (from Wireframe)
-   [CONTACT INFO LABELS] (Left) & [INPUT FORM] (Right)
    ========================================================================== */
+#contact {
+  scroll-margin-top: 75px;
+  min-height: 85vh;
+}
+
 .contact-section-grid {
   display: grid;
   grid-template-columns: 1fr 1.35fr;

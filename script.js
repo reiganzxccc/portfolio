@@ -432,7 +432,52 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 11. SCROLLSPY & NAVIGATION ACTIVE INDICATOR
+  // 11. MODAL CTA LINKS SMOOTH NAVIGATION (e.g. "Connect & Collaborate")
+  // =========================================================================
+  const modalContactLinks = document.querySelectorAll('.modal-contact-link');
+  modalContactLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const modalEl = link.closest('.modal');
+      const contactSection = document.getElementById('contact');
+
+      if (modalEl && typeof bootstrap !== 'undefined') {
+        const bsModal = bootstrap.Modal.getInstance(modalEl) || bootstrap.Modal.getOrCreateInstance(modalEl);
+
+        const onModalHidden = () => {
+          modalEl.removeEventListener('hidden.bs.modal', onModalHidden);
+          
+          if (contactSection) {
+            isManualClick = true;
+            clearTimeout(clickTimer);
+            setActiveNavLink('contact');
+
+            contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            const nameInput = document.getElementById('contact-name');
+            if (nameInput) {
+              setTimeout(() => {
+                nameInput.focus({ preventScroll: true });
+              }, 450);
+            }
+
+            clickTimer = setTimeout(() => {
+              isManualClick = false;
+            }, 2500);
+          }
+        };
+
+        modalEl.addEventListener('hidden.bs.modal', onModalHidden);
+        bsModal.hide();
+      } else if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setActiveNavLink('contact');
+      }
+    });
+  });
+
+  // =========================================================================
+  // 12. SCROLLSPY & NAVIGATION ACTIVE INDICATOR
   // =========================================================================
   const navTargets = [
     { id: 'hero', link: document.getElementById('nav-hero') },
@@ -470,7 +515,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         clickTimer = setTimeout(() => {
           isManualClick = false;
-        }, 900);
+        }, 2200);
 
         if (window.innerWidth <= 900 && mainSidebar) {
           mainSidebar.classList.remove('mobile-open');
@@ -483,15 +528,32 @@ document.addEventListener('DOMContentLoaded', () => {
   function highlightCurrentNav() {
     if (isManualClick) return;
 
-    let scrollY = window.pageYOffset + 180;
+    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+
+    // 1. If at or near bottom of document, lock highlight onto 'contact'
+    if (scrollY + windowHeight >= documentHeight - 140) {
+      setActiveNavLink('contact');
+      return;
+    }
+
+    // 2. If at top of document, lock highlight onto 'hero'
+    if (scrollY < 180) {
+      setActiveNavLink('hero');
+      return;
+    }
+
     const isDesktop = window.innerWidth > 1100;
 
+    // 3. Check section positions in viewport
     for (let i = navTargets.length - 1; i >= 0; i--) {
       const target = navTargets[i];
       const el = document.getElementById(target.id);
       if (el) {
-        const top = el.getBoundingClientRect().top + window.pageYOffset;
-        if (scrollY >= top) {
+        const rect = el.getBoundingClientRect();
+        // Section is active if top is within upper 45% of viewport and bottom is still visible
+        if (rect.top <= windowHeight * 0.45 && rect.bottom >= 100) {
           if (isDesktop && (target.id === 'about' || target.id === 'projects')) {
             if (currentActiveId === 'about') {
               setActiveNavLink('about');
